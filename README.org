@@ -3,6 +3,11 @@ Utility library.
 
 - No dependencies
 - Clojure/Clojurescript
-** Installation
+** Latest version
 
 [[https://img.shields.io/clojars/v/org.danielsz/lang-utils.svg]]
+** Usage
+#+BEGIN_SRC clojure
+(require ‘[lang-utils.core :refer :all])
+#+END_SRC
+As as a general rule, you should never ~:refer :all~. Refer rather the functions you’re interested in. 
