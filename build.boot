@@ -1,4 +1,5 @@
-(set-env! :source-paths   #{"src/cljc"})
+(set-env! :source-paths   #{"src/cljc"}
+          :resource-paths   #{"src/cljc"})
 
 (task-options!
  pom {:project 'org.danielsz/lang-utils
