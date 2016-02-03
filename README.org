@@ -1,0 +1,8 @@
+* lang-utils
+Utility library.
+
+- No dependencies
+- Clojure/Clojurescript
+** Installation
+
+[[https://img.shields.io/clojars/v/org.danielsz/lang-utils.svg]]
