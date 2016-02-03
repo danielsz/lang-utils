@@ -20,7 +20,7 @@
         (recur (dec num) (conj slices (subvec items 0 size)) (subvec items size))))))
 
 (defn contains+?
-  "traverse a map to find a key"
+  "contains? that work with nested maps"
   [coll val]
   (let [sequence (tree-seq map? vals coll)]
     (not-empty (filter #(and (map? %) (contains? % val)) sequence))))
