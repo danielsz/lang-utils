@@ -23,4 +23,4 @@
   "Version of clojure.core/contains? that works with nested maps"
   [coll val]
   (let [sequence (tree-seq map? vals coll)]
-    (not-empty (filter #(and (map? %) (contains? % val)) sequence))))
+    (some #(and (map? %) (contains? % val)) sequence)))
