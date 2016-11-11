@@ -38,7 +38,15 @@
 
 ; (some (find# even?) [1 2 3 4]) =>2
 
-(defn seek [pred coll]
-  (reduce (fn [_ x] (when (pred x) (reduced x))) nil coll))
+(defn seek
+  "Returns first item from coll for which (pred item) returns true.
+   Returns nil if no such item is present, or the not-found value if supplied."
+  ([pred coll] (seek pred coll nil))
+  ([pred coll not-found]
+    (reduce (fn [_ x]
+              (if (pred x)
+                (reduced x)
+                not-found))
+            not-found coll)))
 
 ; (seek even? [1 2 3 4]) => 2
