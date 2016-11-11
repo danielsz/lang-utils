@@ -37,3 +37,8 @@
   (partial (fn [pred x] (and (pred x) x)) pred))
 
 ; (some (find# even?) [1 2 3 4]) =>2
+
+(defn seek [pred coll]
+  (reduce (fn [_ x] (when (pred x) (reduced x))) nil coll))
+
+; (seek even? [1 2 3 4]) => 2
