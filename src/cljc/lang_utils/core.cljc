@@ -24,3 +24,16 @@
   [coll val]
   (let [sequence (tree-seq map? vals coll)]
     (some #(and (map? %) (contains? % val)) sequence)))
+
+(defn some#
+  [pred coll]
+  (when (seq coll)
+    (let [x (first coll)]
+      (or (and (pred x) x) (recur pred (next coll))))))
+
+; (some# even? [1 2 3 4]) => 2
+
+(defn find# [pred]
+  (partial (fn [pred x] (and (pred x) x)) pred))
+
+; (some (find# even?) [1 2 3 4]) =>2
