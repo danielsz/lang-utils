@@ -50,3 +50,9 @@
             not-found coll)))
 
 ; (seek even? [1 2 3 4]) => 2
+
+(defn find-nested
+  [m k]
+  (->> (tree-seq map? vals m)
+       (filter map?)
+       (some k)))
