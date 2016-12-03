@@ -56,3 +56,6 @@
   (->> (tree-seq map? vals m)
        (filter map?)
        (some k)))
+
+(def & comp)
+(def p partial)
