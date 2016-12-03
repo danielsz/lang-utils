@@ -26,21 +26,22 @@
     (some #(and (map? %) (contains? % val)) sequence)))
 
 (defn some#
+  "Usage: (some# even? [1 2 3 4]) => 2"
   [pred coll]
   (when (seq coll)
     (let [x (first coll)]
       (or (and (pred x) x) (recur pred (next coll))))))
 
-; (some# even? [1 2 3 4]) => 2
-
-(defn find# [pred]
+(defn find#
+  "Usage: (some (find# even?) [1 2 3 4]) =>2"
+  [pred]
   (partial (fn [pred x] (and (pred x) x)) pred))
-
-; (some (find# even?) [1 2 3 4]) =>2
 
 (defn seek
   "Returns first item from coll for which (pred item) returns true.
-   Returns nil if no such item is present, or the not-found value if supplied."
+   Returns nil if no such item is present, or the not-found value if supplied.
+  
+  Usage: (seek even? [1 2 3 4]) => 2"
   ([pred coll] (seek pred coll nil))
   ([pred coll not-found]
     (reduce (fn [_ x]
@@ -48,8 +49,6 @@
                 (reduced x)
                 not-found))
             not-found coll)))
-
-; (seek even? [1 2 3 4]) => 2
 
 (defn find-nested
   [m k]
