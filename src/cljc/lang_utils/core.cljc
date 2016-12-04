@@ -56,5 +56,8 @@
        (filter map?)
        (some k)))
 
+;;; point-free style
+;;; https://twitter.com/danielszmu/status/796802210269196293
+
 (def & comp)
 (def p partial)
