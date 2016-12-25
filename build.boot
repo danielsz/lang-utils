@@ -2,6 +2,7 @@
           :resource-paths   #{"src/cljc"})
 
 (task-options!
+ push {:repo-map {:url "https://clojars.org/repo/"}}
  pom {:project 'org.danielsz/lang-utils
       :version "0.1.0-SNAPSHOT"
       :scm {:name "git"
@@ -15,4 +16,4 @@
   []
   (comp
    (build)
-   (push :repo "clojars")))
+   (push)))
