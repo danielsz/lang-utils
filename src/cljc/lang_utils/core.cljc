@@ -60,4 +60,5 @@
 ;;; https://twitter.com/danielszmu/status/796802210269196293
 
 (def & comp)
+(def ∘ comp)
 (def p partial)
