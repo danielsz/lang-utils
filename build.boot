@@ -1,5 +1,6 @@
-(set-env! :source-paths   #{"src/cljc"}
-          :resource-paths   #{"src/cljc"})
+(set-env! :source-paths   #{"src/cljc" "src/clj"}
+          :resource-paths   #{"src/cljc" "src/clj"}
+          :dependencies '[[org.clojure/core.async "0.3.443"]])
 
 (task-options!
  push {:repo-map {:url "https://clojars.org/repo/"}}
