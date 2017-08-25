@@ -1,5 +1,5 @@
 (ns lang-utils.async
-  (:require [clojure.core.async :refer [chan thread >!!]]))
+  (:require [clojure.core.async :refer [chan thread >!! take!]]))
 
 (defmacro with-async [body]
   `(let [c# (chan)]
