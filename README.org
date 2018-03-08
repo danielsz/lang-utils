@@ -4,8 +4,7 @@ Utility library.
 - No dependencies
 - Clojure/Clojurescript
 ** Latest version
-
-[[https://img.shields.io/clojars/v/org.danielsz/lang-utils.svg]]
+[[https://clojars.org/org.danielsz/lang-utils/latest-version.svg]]
 ** Usage
 #+BEGIN_SRC clojure
 (require ‘[lang-utils.core :refer :all])
