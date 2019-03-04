@@ -56,6 +56,14 @@
        (filter map?)
        (some k)))
 
+(defn contains?-any [m xs]
+  "Returns true if map m contains any key defined in sequence xs"
+  (some #(contains? m %) xs))
+
+(defn find-any [m xs]
+  "Returns first key found in map m supplied by sequence of keys xs"
+  (some #(when (contains? m %) %) xs))
+
 ;;; point-free style
 ;;; https://twitter.com/danielszmu/status/796802210269196293
 
