@@ -64,9 +64,3 @@
   "Returns first key found in map m supplied by sequence of keys xs"
   (some #(when (contains? m %) %) xs))
 
-;;; point-free style
-;;; https://twitter.com/danielszmu/status/796802210269196293
-
-(def & comp)
-#?(:clj (def ∘ comp))
-(def p partial)
