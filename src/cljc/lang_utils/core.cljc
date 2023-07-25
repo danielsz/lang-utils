@@ -5,6 +5,13 @@
   [map ks]
   (remove nil? (reduce #(conj %1 (map %2)) [] ks)))
 
+(defn select-keys#
+  "https://stackoverflow.com/questions/38893968/how-to-select-keys-in-nested-maps-in-clojure"
+  [m paths]
+  (into {} (map (fn [p] [(peek p) (get-in m p)])) paths))
+
+(def select-nested-keys select-keys#)
+
 (defn apply-values 
   "http://blog.jayfields.com/2011/01/clojure-select-keys-select-values-and.html"
   [map f & ks]
