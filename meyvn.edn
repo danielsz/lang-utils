@@ -2,7 +2,9 @@
  {:group-id "org.danielsz",
   :artifact-id "lang-utils",
   :version "0.1.6",
-  :name "lang-utils"},
+  :name "lang-utils"
+  :licenses [{:name "Eclipse Public License -v 1.0"
+              :url "https://opensource.org/license/epl-1-0/"}]},
  :packaging
  {:uberjar
   {:enabled false,
